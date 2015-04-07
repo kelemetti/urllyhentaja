@@ -1,0 +1,21 @@
+//SQL -koodit MariaDB:ssa
+
+CREATE DATABASE IF NOT EXISTS urllyhentaja;
+USE 'urllyhentaja';
+
+CREATE TABLE IF NOT EXISTS `stats` (
+`id` int(11) NOT NULL,
+  `url_id` int(11) NOT NULL,
+  `clickdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` varchar(100) NOT NULL,
+  `referer` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `urls` (
+`id` int(11) NOT NULL,
+  `url` varchar(1000) NOT NULL,
+  `segment` varchar(15) NOT NULL,
+  `datetime_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
